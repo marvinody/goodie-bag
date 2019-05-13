@@ -17,5 +17,6 @@ const db = require('./database')
 
 module.exports = {
   // Include your models in this exports object as well!
-  db
+  db,
+  Candy: require('./models/Candy'),
 }

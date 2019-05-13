@@ -25,6 +25,7 @@ module.exports = db.define('candy', {
     }
   },
   imageUrl: {
+    type: Sequelize.STRING,
     defaultValue: '/public/bg.jpg'
   }
 });
