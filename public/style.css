@@ -48,12 +48,27 @@ main {
 .candy.container {
   display:flex;
 }
-.candy.info {
+.candy.all.info {
   display:flex;
   flex:1;
+  justify-content: center;
+  flex-direction: column;
 }
 .candy.image {
   flex: 2;
   display:flex;
+}
+.candy.title {
+  font-size:2rem;
+}
+.candy.quantity::before{
+  content:'Amt.:';
+}
+.candy.basic.info {
+}
+.candy.more.info {
+  font-style: italic;
+  color: gray;
+  font-size:1.5em;
 }
 
