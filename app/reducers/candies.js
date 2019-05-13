@@ -1,5 +1,7 @@
 
-const initialState = {}
+const initialState = {
+  candies: [],
+}
 
 const LOAD_CANDIES = 'LOAD_CANDIES';
 const loadCandies = candies => ({
@@ -8,9 +10,10 @@ const loadCandies = candies => ({
 })
 
 export const fetchCandies = () => (
-  async (dispatch, _, axios) => {
+  async (dispatch, _, { axios }) => {
     try {
-      const candies = await axios.get('/api/candies');
+      const resp = await axios.get('/api/candies');
+      const candies = resp.data;
       dispatch(loadCandies(candies))
     } catch (err) {
       console.error(err);
@@ -21,6 +24,8 @@ export const fetchCandies = () => (
 
 const candiesReducer = (state = initialState, action) => {
   switch (action.type) {
+    case LOAD_CANDIES:
+      return { ...state, candies: action.candies };
     default:
       return state
   }

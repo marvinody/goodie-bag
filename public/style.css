@@ -10,7 +10,7 @@
 
 body::after {
   content: "";
-  background: url('bg.jpg');
+  background: url('bg.jpg') repeat;
   opacity: 0.1;
   top: 0;
   left: 0;
@@ -29,9 +29,31 @@ nav {
   padding: 10px;
 }
 
+a{
+  padding:5px;
+}
+a.selected {
+  border:1px solid grey;
+}
+
 main {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+.candy.list {
+  width:50%;
+}
+.candy.container {
+  display:flex;
+}
+.candy.info {
+  display:flex;
+  flex:1;
+}
+.candy.image {
+  flex: 2;
+  display:flex;
+}
+
